@@ -8,16 +8,16 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapMutations, mapActions } from "vuex";
 import { store } from "../store/store";
 
 @Component({
   store,
   computed: mapState(["count"]),
   methods: {
-    ...mapMutations(["increment"]),
+    ...mapActions(["increment"]),
     decrement() {
-      this.$store.commit("decrement", 1);
+      this.$store.dispatch("decrement", 1);
     },
   },
 })

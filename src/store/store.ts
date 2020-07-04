@@ -18,4 +18,12 @@ export const store = new Vuex.Store({
       state.count -= n;
     },
   },
+  actions: {
+    increment({ commit }) {
+      commit("increment");
+    },
+    decrement({ commit }, n) {
+      commit("decrement", n);
+    },
+  },
 });
